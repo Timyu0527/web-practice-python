@@ -11,7 +11,7 @@ class KeelungSightsCrawler:
         self.__getAllSightsInfo()
 
     def __getAllSightsURL(self):
-        document = BeautifulSoup(requests.get("{}/tourguide/taiwan/keelungcity/".format(self.__baseUrl)).text, "html.parser")
+        document = BeautifulSoup(requests.get(self.__baseUrl + "/tourguide/taiwan/keelungcity/").text, "html.parser")
         sel = document.select("div.box h4")
         for row in sel:
             sight = row.next_sibling
@@ -56,7 +56,7 @@ class KeelungSightsCrawler:
 
     def __getAllSightsInfo(self):
         for sightUrl in self.__allSightsURLs:
-            document = BeautifulSoup(requests.get("{}{}".format(self.__baseUrl, sightUrl)).text, "html.parser")
+            document = BeautifulSoup(requests.get(self.__baseUrl + sightUrl).text, "html.parser")
             sightName = self.__getSightName(document)
             category = self.__getCategory(document)
             zone = self.__getZone(document)

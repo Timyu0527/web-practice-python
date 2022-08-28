@@ -6,12 +6,12 @@ from routers.sight import db_init, sightRouter
 app = FastAPI()
 app.include_router(sightRouter)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
-@app.get('/favicon.ico')
-async def get_favicon():
-    return FileResponse('static/favicon.ico')
+# @app.get('/favicon.ico')
+# async def get_favicon():
+#     return FileResponse('static/favicon.ico')
 
-@app.get("/")
-async def get_index():
-    return FileResponse('static/index.html')
+# @app.get("/")
+# async def get_index():
+#     return FileResponse('static/index.html')

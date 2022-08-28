@@ -19,4 +19,4 @@ db_init()
 
 @sightRouter.get("/SightAPI")
 def get_sight(zone: Optional[str] = None):
-    return list(collection.find({'zone': "{}區".format(zone)}))
+    return list(collection.find({'zone': zone + "區"}))
