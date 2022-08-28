@@ -69,7 +69,10 @@ class KeelungSightsCrawler:
     #     return [sight for sight in self.__allSights if sight.dict()['zone'] == "{}區".format(zone)]
 
     def getAllSight(self):
-        return self.__allSights
+        self.__allSightsURLs = []
+        sights = self.__allSights.copy()
+        self.__allSights = []
+        return sights
 
 
 
