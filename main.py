@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from starlette.responses import FileResponse 
-from routers.sight import db_init, sightRouter
+from routers.sight import sightRouter
 
 app = FastAPI()
 app.include_router(sightRouter)

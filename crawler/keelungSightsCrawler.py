@@ -63,7 +63,14 @@ class KeelungSightsCrawler:
             photoUrl = self.__getPhotoURL(document)
             description = self.__getDescription(document)
             address = self.__getAddress(document)
-            self.__allSights.append(Sight(sightName=sightName, zone=zone, category=category, photoUrl=photoUrl, description=description, address=address))
+            self.__allSights.append(Sight(
+                                        sightName=sightName,
+                                        zone=zone,
+                                        category=category,
+                                        photoUrl=photoUrl,
+                                        description=description,
+                                        address=address
+                                    ))
 
     # def getItem(self, zone: str):
     #     return [sight for sight in self.__allSights if sight.dict()['zone'] == "{}區".format(zone)]
