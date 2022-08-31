@@ -2,3 +2,5 @@ fastapi
 bs4
 requests
 pymongo
+uvicorn
+pymongo[srv]
