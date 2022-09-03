@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import  Optional
 from config.database import db
-from crawler.keelungSightsCrawler import KeelungSightsCrawler
+from crawler.keelungsightscrawler import KeelungSightsCrawler
 
 sightRouter = APIRouter()
 collection = db["sight_python"]
